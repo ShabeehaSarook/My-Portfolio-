@@ -1,0 +1,20 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="48" fill="#06101E"/>
+  <rect x="120" y="140" width="960" height="520" rx="36" fill="white" fill-opacity="0.04" stroke="white" stroke-opacity="0.08"/>
+  <path d="M190 520L320 430L430 470L560 310L700 360L860 250L1010 210" stroke="url(#g1)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M190 520C270 500 320 430 430 470C540 510 610 300 700 360C790 420 900 230 1010 210" stroke="#14F195" stroke-opacity="0.6" stroke-width="3" stroke-dasharray="12 16"/>
+  <circle cx="320" cy="430" r="12" fill="#00FFFF"/>
+  <circle cx="560" cy="310" r="12" fill="#7C3AED"/>
+  <circle cx="860" cy="250" r="12" fill="#14F195"/>
+  <rect x="120" y="588" width="250" height="72" rx="20" fill="#00FFFF" fill-opacity="0.12"/>
+  <text x="152" y="633" fill="white" font-family="Inter, Arial" font-size="28" font-weight="700">Price Prediction</text>
+  <text x="720" y="635" fill="#94A3B8" font-family="Inter, Arial" font-size="22">100k records, R² ≈ 0.997</text>
+  <defs>
+    <linearGradient id="g1" x1="190" y1="520" x2="1010" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FFFF"/>
+      <stop offset="0.5" stop-color="#14F195"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>
+

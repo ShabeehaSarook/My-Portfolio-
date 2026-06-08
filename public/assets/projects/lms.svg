@@ -1,0 +1,15 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="48" fill="#07111F"/>
+  <rect x="160" y="150" width="880" height="500" rx="40" fill="white" fill-opacity="0.04" stroke="white" stroke-opacity="0.08"/>
+  <rect x="200" y="190" width="210" height="60" rx="18" fill="#00FFFF" fill-opacity="0.16"/>
+  <rect x="200" y="280" width="800" height="70" rx="20" fill="white" fill-opacity="0.05"/>
+  <rect x="200" y="380" width="800" height="70" rx="20" fill="white" fill-opacity="0.05"/>
+  <rect x="200" y="480" width="800" height="70" rx="20" fill="white" fill-opacity="0.05"/>
+  <circle cx="962" cy="220" r="56" fill="#7C3AED" fill-opacity="0.2"/>
+  <path d="M940 220L955 235L985 203" stroke="#14F195" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="235" y="229" fill="white" font-family="Inter, Arial" font-size="28" font-weight="700">Learning Management System</text>
+  <text x="235" y="325" fill="#94A3B8" font-family="Inter, Arial" font-size="22">Role-based access and REST APIs</text>
+  <text x="235" y="425" fill="#94A3B8" font-family="Inter, Arial" font-size="22">Authentication and course management</text>
+  <text x="235" y="525" fill="#94A3B8" font-family="Inter, Arial" font-size="22">React, Node, Express, MongoDB</text>
+</svg>
+

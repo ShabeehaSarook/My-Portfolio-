@@ -1,0 +1,47 @@
+<svg width="1200" height="660" viewBox="0 0 1200 660" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="660" rx="44" fill="#071022"/>
+  <rect x="48" y="48" width="1104" height="564" rx="36" fill="white" fill-opacity="0.04" stroke="white" stroke-opacity="0.08"/>
+  <circle cx="160" cy="120" r="120" fill="#00FFFF" fill-opacity="0.12"/>
+  <circle cx="1040" cy="110" r="160" fill="#7C3AED" fill-opacity="0.14"/>
+  <circle cx="960" cy="520" r="150" fill="#14F195" fill-opacity="0.10"/>
+  <rect x="92" y="92" width="300" height="132" rx="24" fill="#081522" stroke="#2DD4BF" stroke-opacity="0.22"/>
+  <rect x="430" y="92" width="678" height="132" rx="24" fill="#081522" stroke="#8B5CF6" stroke-opacity="0.18"/>
+  <rect x="92" y="256" width="430" height="292" rx="28" fill="#081522" stroke="white" stroke-opacity="0.08"/>
+  <rect x="554" y="256" width="554" height="292" rx="28" fill="#081522" stroke="white" stroke-opacity="0.08"/>
+  <rect x="122" y="126" width="84" height="28" rx="14" fill="#00FFFF" fill-opacity="0.16"/>
+  <rect x="122" y="170" width="220" height="18" rx="9" fill="white" fill-opacity="0.85"/>
+  <rect x="122" y="198" width="150" height="12" rx="6" fill="#94A3B8" fill-opacity="0.8"/>
+  <path d="M598 174L706 126L816 154L934 110L1060 148" stroke="url(#g1)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M598 196L706 150L816 180L934 144L1060 186" stroke="#14F195" stroke-opacity="0.65" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 14"/>
+  <circle cx="598" cy="174" r="8" fill="#00FFFF"/>
+  <circle cx="706" cy="126" r="8" fill="#14F195"/>
+  <circle cx="816" cy="154" r="8" fill="#7C3AED"/>
+  <circle cx="934" cy="110" r="8" fill="#00FFFF"/>
+  <circle cx="1060" cy="148" r="8" fill="#14F195"/>
+  <text x="586" y="100" fill="white" font-family="Inter, Arial" font-size="24" font-weight="700">AI Agriculture Dashboard</text>
+  <text x="586" y="228" fill="#94A3B8" font-family="Inter, Arial" font-size="18">Plant health scoring, disease detection, and analytics</text>
+  <rect x="122" y="294" width="140" height="192" rx="22" fill="#0B1728" stroke="white" stroke-opacity="0.06"/>
+  <rect x="278" y="294" width="214" height="192" rx="22" fill="#0B1728" stroke="white" stroke-opacity="0.06"/>
+  <rect x="584" y="304" width="196" height="72" rx="18" fill="#00FFFF" fill-opacity="0.10"/>
+  <rect x="800" y="304" width="266" height="72" rx="18" fill="#7C3AED" fill-opacity="0.12"/>
+  <rect x="584" y="392" width="482" height="126" rx="20" fill="#0B1728" stroke="white" stroke-opacity="0.06"/>
+  <path d="M154 424H246" stroke="#00FFFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M154 454H222" stroke="#7C3AED" stroke-width="8" stroke-linecap="round"/>
+  <path d="M154 484H268" stroke="#14F195" stroke-width="8" stroke-linecap="round"/>
+  <path d="M310 468C338 432 366 442 392 404C418 366 444 376 452 336" stroke="url(#g2)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M620 472H1014" stroke="#00FFFF" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M620 512H920" stroke="#94A3B8" stroke-opacity="0.25" stroke-width="4" stroke-linecap="round"/>
+  <text x="620" y="348" fill="white" font-family="Inter, Arial" font-size="22" font-weight="700">Healthy / Risk / Alert</text>
+  <text x="840" y="348" fill="white" font-family="Inter, Arial" font-size="22" font-weight="700">Prediction Confidence</text>
+  <defs>
+    <linearGradient id="g1" x1="598" y1="196" x2="1060" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FFFF"/>
+      <stop offset="0.55" stop-color="#14F195"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="310" y1="468" x2="452" y2="336" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14F195"/>
+      <stop offset="1" stop-color="#00FFFF"/>
+    </linearGradient>
+  </defs>
+</svg>

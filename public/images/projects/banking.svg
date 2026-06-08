@@ -1,0 +1,35 @@
+<svg width="1200" height="660" viewBox="0 0 1200 660" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="660" rx="44" fill="#06101A"/>
+  <rect x="48" y="48" width="1104" height="564" rx="36" fill="white" fill-opacity="0.04" stroke="white" stroke-opacity="0.08"/>
+  <circle cx="210" cy="128" r="120" fill="#00FFFF" fill-opacity="0.10"/>
+  <circle cx="990" cy="126" r="170" fill="#7C3AED" fill-opacity="0.14"/>
+  <circle cx="940" cy="512" r="150" fill="#14F195" fill-opacity="0.10"/>
+  <rect x="92" y="92" width="334" height="132" rx="24" fill="#081522" stroke="#2DD4BF" stroke-opacity="0.20"/>
+  <rect x="456" y="92" width="636" height="132" rx="24" fill="#081522" stroke="#8B5CF6" stroke-opacity="0.18"/>
+  <rect x="92" y="256" width="336" height="292" rx="28" fill="#081522" stroke="white" stroke-opacity="0.08"/>
+  <rect x="452" y="256" width="640" height="292" rx="28" fill="#081522" stroke="white" stroke-opacity="0.08"/>
+  <text x="122" y="132" fill="white" font-family="Inter, Arial" font-size="24" font-weight="700">Modern Banking Dashboard</text>
+  <text x="122" y="164" fill="#94A3B8" font-family="Inter, Arial" font-size="18">Transactions, balances, and account management</text>
+  <rect x="122" y="178" width="146" height="20" rx="10" fill="#00FFFF" fill-opacity="0.14"/>
+  <rect x="122" y="294" width="256" height="50" rx="14" fill="#00FFFF" fill-opacity="0.10"/>
+  <rect x="122" y="358" width="256" height="50" rx="14" fill="white" fill-opacity="0.05"/>
+  <rect x="122" y="422" width="256" height="50" rx="14" fill="white" fill-opacity="0.05"/>
+  <rect x="122" y="486" width="256" height="50" rx="14" fill="white" fill-opacity="0.05"/>
+  <path d="M492 382H1040" stroke="url(#g1)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M532 318H1008" stroke="#14F195" stroke-opacity="0.48" stroke-width="4" stroke-dasharray="12 18"/>
+  <circle cx="562" cy="382" r="24" fill="#00FFFF" fill-opacity="0.18"/>
+  <circle cx="774" cy="382" r="24" fill="#7C3AED" fill-opacity="0.18"/>
+  <circle cx="986" cy="382" r="24" fill="#14F195" fill-opacity="0.18"/>
+  <rect x="492" y="430" width="250" height="90" rx="20" fill="#0B1728" stroke="white" stroke-opacity="0.06"/>
+  <rect x="768" y="430" width="288" height="90" rx="20" fill="#0B1728" stroke="white" stroke-opacity="0.06"/>
+  <text x="522" y="336" fill="white" font-family="Inter, Arial" font-size="22" font-weight="700">Transfer Flow</text>
+  <text x="522" y="490" fill="white" font-family="Inter, Arial" font-size="22" font-weight="700">Account Overview</text>
+  <text x="798" y="490" fill="white" font-family="Inter, Arial" font-size="22" font-weight="700">Secure Validation</text>
+  <text x="522" y="520" fill="#94A3B8" font-family="Inter, Arial" font-size="18">Core banking actions and transaction processing</text>
+  <defs>
+    <linearGradient id="g1" x1="492" y1="382" x2="1040" y2="382" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FFFF"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>
