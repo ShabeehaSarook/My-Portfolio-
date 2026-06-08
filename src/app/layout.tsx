@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { SiteShell } from "@/components/providers/site-shell";
 import { siteConfig } from "@/constants/site";
 import { getSiteUrl } from "@/lib/site-url";
@@ -59,5 +60,10 @@ export const metadata: Metadata = {
 };
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
-  return <SiteShell>{children}</SiteShell>;
+  return (
+    <>
+      <SiteShell>{children}</SiteShell>
+      <Analytics />
+    </>
+  );
 }
