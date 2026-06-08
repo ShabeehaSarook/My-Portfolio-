@@ -23,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 dev-server.*.log
 start-server.*.log
+vercel-verify.*.log
 *.pid
 
 # local tooling
@@ -32,7 +33,7 @@ start-server.*.log
 .env*.local
 
 # vercel
-.vercel
+/.vercel
 
 # typescript
 *.tsbuildinfo
