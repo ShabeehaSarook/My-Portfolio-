@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/providers/site-shell";
 import { siteConfig } from "@/constants/site";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   title: "SHABEEHA | Software Engineer",
