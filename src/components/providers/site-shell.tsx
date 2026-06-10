@@ -2,15 +2,25 @@
 
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLenisScroll } from "@/hooks/use-lenis-scroll";
-import { useMousePosition } from "@/hooks/use-mouse-position";
 import { ToastProvider } from "@/components/ui/toast";
 import { Motion } from "@/components/ui/motion";
 import { pageTransition } from "@/lib/animations/pageTransition";
 
 function CursorGlow() {
-  const position = useMousePosition();
+  const glowRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMove = (e: PointerEvent) => {
+      if (!glowRef.current) return;
+      const { clientX, clientY } = e;
+      glowRef.current.style.transform = `translate(${clientX}px, ${clientY}px)`;
+    };
+
+    window.addEventListener("pointermove", handleMove, { passive: true });
+    return () => window.removeEventListener("pointermove", handleMove);
+  }, []);
 
   return (
     <div
@@ -18,12 +28,13 @@ function CursorGlow() {
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
     >
       <div
-        className="absolute h-[38rem] w-[38rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/12 blur-3xl transition-transform duration-150 ease-out"
-        style={{ left: position.x, top: position.y }}
+        ref={glowRef}
+        className="absolute h-[38rem] w-[38rem] -left-[19rem] -top-[19rem] rounded-full bg-cyan-400/12 blur-3xl will-change-transform transition-transform duration-300 ease-out"
       />
     </div>
   );
 }
+
 
 function SpatialBackdrop() {
   return (

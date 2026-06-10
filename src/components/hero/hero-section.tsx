@@ -222,19 +222,6 @@ export function HeroSection() {
             })}
           </Motion.div>
         </div>
-
-        <Motion.div
-          variants={zoomIn}
-          initial="hidden"
-          animate="show"
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="relative z-10"
-        >
-          <div className="absolute -inset-8 rounded-[2.5rem] bg-[radial-gradient(circle,rgba(0,255,255,0.24),transparent_60%)] blur-3xl" />
-          <div className="kinetic-border isolate rounded-[2.7rem] p-px">
-            <HeroCodeWorkspace />
-          </div>
-        </Motion.div>
       </div>
     </section>
   );

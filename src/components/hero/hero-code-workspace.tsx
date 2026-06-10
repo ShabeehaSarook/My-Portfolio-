@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import {
   Braces,
@@ -81,7 +81,7 @@ function renderHighlightedLine(line: string) {
 
 export function HeroCodeWorkspace() {
   const [typedLength, setTypedLength] = useState(0);
-  const [pointer, setPointer] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
   const fullLines = useMemo(() => codeSnippet.split("\n"), []);
   const typedLines = useMemo(() => codeSnippet.slice(0, typedLength).split("\n"), [typedLength]);
 
@@ -92,7 +92,6 @@ export function HeroCodeWorkspace() {
           window.clearInterval(interval);
           return current;
         }
-
         return Math.min(current + 8, codeSnippet.length);
       });
     }, 28);
@@ -100,29 +99,42 @@ export function HeroCodeWorkspace() {
     return () => window.clearInterval(interval);
   }, []);
 
-  const parallaxX = pointer.x * 10;
-  const parallaxY = pointer.y * -8;
-  const rotateX = pointer.y * -3;
-  const rotateY = pointer.x * 4;
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleMove = (e: MouseEvent) => {
+      const rect = container.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      const rotateX = y * -6;
+      const rotateY = x * 8;
+      
+      container.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    };
+
+    const handleLeave = () => {
+      container.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`;
+    };
+
+    container.addEventListener("mousemove", handleMove as any);
+    container.addEventListener("mouseleave", handleLeave);
+
+    return () => {
+      container.removeEventListener("mousemove", handleMove as any);
+      container.removeEventListener("mouseleave", handleLeave);
+    };
+  }, []);
 
   return (
     <Motion.div
+      ref={containerRef}
       data-hero-code-workspace
       initial={{ opacity: 0, y: 24, scale: 0.97 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.75, ease: "easeOut" }}
-      onMouseMove={(event: MouseEvent<HTMLDivElement>) => {
-        const rect = event.currentTarget.getBoundingClientRect();
-        setPointer({
-          x: (event.clientX - rect.left) / rect.width - 0.5,
-          y: (event.clientY - rect.top) / rect.height - 0.5,
-        });
-      }}
-      onMouseLeave={() => setPointer({ x: 0, y: 0 })}
-      className="relative min-h-[30rem] overflow-hidden rounded-[1.75rem] border border-white/12 bg-[linear-gradient(145deg,rgba(10,18,38,0.92),rgba(3,7,18,0.96))] p-3 shadow-[0_30px_120px_rgba(0,0,0,0.34)] backdrop-blur-2xl sm:min-h-[37rem] sm:rounded-[2.25rem] sm:p-6 lg:min-h-[41rem]"
-      style={{
-        transform: `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-      }}
+      className="relative min-h-[30rem] overflow-hidden rounded-[1.75rem] border border-white/12 bg-[linear-gradient(145deg,rgba(10,18,38,0.92),rgba(3,7,18,0.96))] p-3 shadow-[0_30px_120px_rgba(0,0,0,0.34)] backdrop-blur-2xl sm:min-h-[37rem] sm:rounded-[2.25rem] sm:p-6 lg:min-h-[41rem] will-change-transform transition-transform duration-300 ease-out"
     >
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.1),transparent_24%,rgba(0,255,255,0.08)_58%,transparent_82%)]" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:42px_42px]" />
@@ -133,7 +145,6 @@ export function HeroCodeWorkspace() {
           key={badge.label}
           initial={{ y: 10 }}
           animate={{
-            x: parallaxX * (index % 2 === 0 ? -0.28 : 0.28),
             y: [0, -5, 0],
           }}
           whileHover={{ scale: 1.06, y: -4 }}
@@ -150,11 +161,7 @@ export function HeroCodeWorkspace() {
         </Motion.div>
       ))}
 
-      <Motion.div
-        animate={{ x: parallaxX, y: parallaxY }}
-        transition={{ type: "spring", stiffness: 120, damping: 22 }}
-        className="relative z-20 mx-auto mt-4 max-w-[36rem] rounded-[1.4rem] border border-white/12 bg-[#080f20]/82 shadow-[0_28px_100px_rgba(0,0,0,0.42)] backdrop-blur-2xl sm:mt-12 sm:rounded-[1.7rem]"
-      >
+      <div className="relative z-20 mx-auto mt-4 max-w-[36rem] rounded-[1.4rem] border border-white/12 bg-[#080f20]/82 shadow-[0_28px_100px_rgba(0,0,0,0.42)] backdrop-blur-2xl sm:mt-12 sm:rounded-[1.7rem]">
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
@@ -210,7 +217,7 @@ export function HeroCodeWorkspace() {
             })}
           </div>
         </div>
-      </Motion.div>
+      </div>
 
       <div className="relative z-20 mt-4 grid grid-cols-2 gap-2 sm:mt-6 sm:gap-3">
         {statCards.map((card, index) => {

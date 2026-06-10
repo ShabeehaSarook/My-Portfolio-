@@ -12,24 +12,24 @@ export function useLenisScroll() {
     }
 
     const lenis = new Lenis({
-      duration: 1.05,
-      lerp: 0.08,
+      duration: 1.2,
+      lerp: 0.1,
       smoothWheel: true,
-      syncTouch: false,
-      wheelMultiplier: 0.95,
-      touchMultiplier: 1.15,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
     });
 
-    let raf = 0;
-    const animate = (time: number) => {
+    function raf(time: number) {
       lenis.raf(time);
-      raf = window.requestAnimationFrame(animate);
-    };
+      requestAnimationFrame(raf);
+    }
 
-    raf = window.requestAnimationFrame(animate);
+    requestAnimationFrame(raf);
 
+    // Sync with ScrollTrigger if needed (though we use Framer Motion)
+    
     return () => {
-      window.cancelAnimationFrame(raf);
       lenis.destroy();
     };
   }, []);
